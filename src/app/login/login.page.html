@@ -1,0 +1,54 @@
+<ion-content class="login-content" fullscreen>
+  <div class="login-wrapper">
+
+    <ion-card class="login-card">
+      <ion-card-header>
+        <ion-card-title>Welcome Back</ion-card-title>
+        <ion-card-subtitle>Please sign in to continue</ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content>
+
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+          <ion-item lines="none" class="input-item">
+            <ion-input
+              label="Username"
+              labelPlacement="floating"
+              type="text"
+              placeholder="Enter username"
+              formControlName="username">
+            </ion-input>
+          </ion-item>
+
+          <ion-item lines="none" class="input-item">
+            <ion-input
+              label="Password"
+              labelPlacement="floating"
+              type="password"
+              placeholder="Enter password"
+              formControlName="password">
+            </ion-input>
+          </ion-item>
+
+          <ion-button type="submit" expand="block" class="login-btn">
+            Login
+          </ion-button>
+        </form>
+
+        <ion-button  expand="block" fill="clear" size="small" class="forgot-btn">
+          Forgot Password?
+        </ion-button>
+
+        <div class="divider">
+          <span>OR</span>
+        </div>
+
+        <ion-button expand="block" fill="outline" class="create-btn">
+          Create New Account
+        </ion-button>
+
+      </ion-card-content>
+    </ion-card>
+
+  </div>
+</ion-content>
