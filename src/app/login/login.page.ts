@@ -35,7 +35,6 @@ export class LoginPage {
         this.loader.hide();
       },
       (error)=> {
-        console.log('error', error);
         this.loader.hide();
       }
     )

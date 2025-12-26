@@ -58,6 +58,15 @@
     font-weight: 600;
     color: #4fc3f7;                   // matches spinner for vibrant look
   }
+
+  .error-alert {
+    --background: #020617;
+    --color: #e5e7eb;
+  }
+
+  .error-alert .alert-button {
+    color: #38bdf8;
+  }
 }
 
 
