@@ -7,8 +7,10 @@ export class AuthService {
   constructor(){}
 
   setAuthToken(accessToken: string, refreshToken: string) {
-    localStorage.setItem('accessToken', accessToken);
-    localStorage.setItem('refreshToken', refreshToken);
+    return Promise.all([
+    localStorage.setItem('accessToken', accessToken),
+    localStorage.setItem('refreshToken', refreshToken)
+  ])
   }
 
   getAuthToken(): string | null {

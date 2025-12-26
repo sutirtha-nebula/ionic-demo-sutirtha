@@ -24,8 +24,9 @@ export class LoginPage {
     }
 
     this.apiService.post('auth/login', this.loginForm.value).subscribe(
-      (response)=>{
-        this.authService.setAuthToken(response.accessToken, response.refreshToken);
+      async (response)=>{
+        await this.authService.setAuthToken(response.accessToken, response.refreshToken)
+
         this.router.navigate(['/dashboard']);
       },
       (error)=> {
