@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from '../services/api';
+import { AuthService } from '../services/auth';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +16,7 @@ export class LoginPage {
     password: new FormControl('', [Validators.required, Validators.minLength(6)])
   });
 
-  constructor(private apiService: ApiService){}
+  constructor(private apiService: ApiService, private authService: AuthService, private router: Router){}
 
   login(){
     if(this.loginForm.invalid){
@@ -23,7 +25,8 @@ export class LoginPage {
 
     this.apiService.post('auth/login', this.loginForm.value).subscribe(
       (response)=>{
-        console.log('Login successful', response);
+        this.authService.setAuthToken(response.accessToken, response.refreshToken);
+        this.router.navigate(['/dashboard']);
       },
       (error)=> {
         console.log('error', error);

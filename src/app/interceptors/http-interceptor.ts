@@ -9,7 +9,7 @@ export class HttpInterceptorService implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     
     // 1️⃣ Get token if it exists
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem('accessToken');
 
     // 2️⃣ Clone request to add Authorization header if token exists
     let authReq = req;
