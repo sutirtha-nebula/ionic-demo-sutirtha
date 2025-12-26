@@ -15,6 +15,10 @@ const routes: Routes = [
   {
     path: 'account-menu',
     loadChildren: () => import('./components/account-menu/account-menu.module').then( m => m.AccountMenuPageModule)
+  },
+  {
+    path: 'profile',
+    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
   }
 ];
 @NgModule({
