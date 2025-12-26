@@ -1,3 +1,1 @@
 # ionic-demo-sutirtha
-
-#
