@@ -35,3 +35,31 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 // @import "@ionic/angular/css/palettes/dark.system.css";
+
+.custom-loader {
+  --background: transparent;         // transparent loader box
+  --backdrop-opacity: 0.4;           // subtle overlay (optional)
+  --spinner-color: #4fc3f7;          // bright blue spinner
+  color: #ffffff;                   // text color
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  ion-spinner {
+    width: 60px;
+    height: 60px;
+  }
+
+  .loading-message {
+    margin-top: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #4fc3f7;                   // matches spinner for vibrant look
+  }
+}
+
+
+
+
