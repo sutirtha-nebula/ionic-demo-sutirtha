@@ -69,6 +69,29 @@
   }
 }
 
+.account-popover {
+  --background: #020617;
+  --color: #e5e7eb;
+  --width: 180px;
+  --border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.account-menu ion-item {
+  --background: transparent;
+  --color: rgb(56, 189, 248,);
+  font-size: 14px;
+}
+
+.account-menu ion-item:hover {
+  --background: rgba(56, 189, 248, 0.1);
+}
+
+.account-menu ion-icon {
+  color: #38bdf8;
+}
+
+
 
 
 

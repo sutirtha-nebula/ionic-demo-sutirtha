@@ -11,6 +11,10 @@ const routes: Routes = [
     path: 'dashboard',
     canActivate: [AuthGuard],
     loadChildren: () => import('./dashboard/dashboard.module').then( m => m.DashboardPageModule)
+  },
+  {
+    path: 'account-menu',
+    loadChildren: () => import('./components/account-menu/account-menu.module').then( m => m.AccountMenuPageModule)
   }
 ];
 @NgModule({
