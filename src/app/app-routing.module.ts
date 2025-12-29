@@ -7,6 +7,7 @@ const routes: Routes = [
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   {
     path: 'dashboard',
     canActivate: [AuthGuard],
@@ -14,10 +15,12 @@ const routes: Routes = [
   },
   {
     path: 'account-menu',
+    canActivate: [AuthGuard],
     loadChildren: () => import('./components/account-menu/account-menu.module').then( m => m.AccountMenuPageModule)
   },
   {
     path: 'profile',
+    canActivate: [AuthGuard],
     loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
   }
 ];

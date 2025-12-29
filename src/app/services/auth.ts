@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(){}
+  constructor(private router: Router){}
 
   setAuthToken(accessToken: string, refreshToken: string) {
     return Promise.all([
@@ -20,5 +21,10 @@ export class AuthService {
   clearAuthToken() {
     localStorage.removeItem('accessToken');
     localStorage.removeItem('refreshToken');
+  }
+
+  logout(){
+    this.clearAuthToken();
+    this.router.navigate(['/login']);
   }
 }
