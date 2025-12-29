@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { IonicModule, PopoverController } from "@ionic/angular";
 import { AccountMenuPage } from '../account-menu/account-menu.page';
+import { CartService } from 'src/app/services/cart';
 
 @Component({
   selector: 'app-header',
@@ -11,8 +12,9 @@ import { AccountMenuPage } from '../account-menu/account-menu.page';
 export class HeaderComponent {
   @Input() title:any;
 
-  constructor(private popoverCtrl: PopoverController, ) { }
-
+  constructor(private popoverCtrl: PopoverController, private cartService: CartService) { }
+    cartCount: number = 0;
+    
     async openAccountMenu(ev: any) {
       const popover = await this.popoverCtrl.create({
         component: AccountMenuPage,
@@ -24,5 +26,11 @@ export class HeaderComponent {
       
       await popover.present();
     }
+
+  ngOnInit() {
+    this.cartService.cartItems$.subscribe(items => {
+      this.cartCount = items.reduce((acc, item) => acc + item.totalQuantity, 0);
+    });
+  }
 
 }

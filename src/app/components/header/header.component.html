@@ -6,6 +6,7 @@
     <ion-buttons slot="end">
       <ion-button routerLink="/cart">
         <ion-icon name="cart-outline" size="large"></ion-icon>
+        <span class="cart-badge">{{ cartCount }}</span>
       </ion-button>
       <ion-button (click)="openAccountMenu($event)">
         <ion-icon name="person-circle-outline" size="large"></ion-icon>
