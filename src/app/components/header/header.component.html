@@ -1,9 +1,10 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Dashboard</ion-title>
+    <ion-img slot="start" src="assets/icon/favicon.png" class="logo-image" routerLink="/dashboard"></ion-img>
+    <ion-title>{{title}}</ion-title>
 
     <ion-buttons slot="end">
-      <ion-button>
+      <ion-button routerLink="/cart">
         <ion-icon name="cart-outline" size="large"></ion-icon>
       </ion-button>
       <ion-button (click)="openAccountMenu($event)">

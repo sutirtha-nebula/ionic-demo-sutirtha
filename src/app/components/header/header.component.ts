@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { IonicModule, PopoverController } from "@ionic/angular";
 import { AccountMenuPage } from '../account-menu/account-menu.page';
 
@@ -9,8 +9,9 @@ import { AccountMenuPage } from '../account-menu/account-menu.page';
   standalone: false,
 })
 export class HeaderComponent {
+  @Input() title:any;
 
-  constructor(private popoverCtrl: PopoverController) { }
+  constructor(private popoverCtrl: PopoverController, ) { }
 
     async openAccountMenu(ev: any) {
       const popover = await this.popoverCtrl.create({
