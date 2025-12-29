@@ -11,9 +11,34 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">dashboard</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="product-content">
+  <div class="product-wrapper">
+
+    <!-- Header -->
+    <div class="product-header">
+      <h2 class="title">Discover Products</h2>
+      <p class="subtitle">Curated essentials for everyday use</p>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="product-list">
+      <div class="product-card" *ngFor="let product of products">
+        <div class="image-wrapper">
+          <img [src]="product.images[0]" alt="product" />
+        </div>
+
+        <div class="product-info">
+          <h3 class="name">{{ product.title }}</h3>
+          <p class="price">₹{{ product.price }}</p>
+        </div>
+
+        <ion-button size="small" class="add-btn">
+          Add to cart
+        </ion-button>
+      </div>
+    </div>
+
+  </div>
+</ion-content>
+
 </ion-content>
