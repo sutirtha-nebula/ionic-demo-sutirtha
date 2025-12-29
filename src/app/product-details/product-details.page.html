@@ -17,34 +17,34 @@
 
       <!-- RIGHT: Details -->
       <div class="details-section">
+        <div class="details-section-inner">
+          <h1 class="title">{{ product?.name }}</h1>
+          <p class="price">₹{{ product?.price }}</p>
 
-        <h1 class="title">{{ product?.name }}</h1>
-        <p class="price">₹{{ product?.price }}</p>
+          <p class="description">
+            {{ product?.description }}
+          </p>
 
-        <p class="description">
-          {{ product?.description }}
-        </p>
-
-        <div class="meta">
-          <div>
-            <span>Category</span>
-            <p>{{ product?.category }}</p>
+          <div class="meta">
+            <div>
+              <span>Category</span>
+              <p>{{ product?.category }}</p>
+            </div>
+            <div>
+              <span>availability</span>
+              <p>{{product?.availabilityStatus}}</p>
+            </div>
           </div>
-          <div>
-            <span>availability</span>
-            <p>{{product?.availabilityStatus}}</p>
+
+          <div class="actions">
+            <ion-button class="primary-btn">
+              Add to Cart
+            </ion-button>
+            <ion-button fill="outline" class="secondary-btn">
+              Buy Now
+            </ion-button>
           </div>
         </div>
-
-        <div class="actions">
-          <ion-button class="primary-btn">
-            Add to Cart
-          </ion-button>
-          <ion-button fill="outline" class="secondary-btn">
-            Buy Now
-          </ion-button>
-        </div>
-
       </div>
 
     </div>
