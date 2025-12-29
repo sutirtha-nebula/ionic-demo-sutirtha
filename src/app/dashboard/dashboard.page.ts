@@ -29,8 +29,6 @@ export class DashboardPage {
   async ngOnInit() {
     this.apiService.get('products').subscribe(data => {
       this.products = data?.products || [];
-      console.log(this.products);
-      console.log('Products Data:', data);
     });
   }
 

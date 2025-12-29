@@ -23,18 +23,21 @@
     <!-- Product Grid -->
     <div class="product-list">
       <div class="product-card" *ngFor="let product of products">
-        <div class="image-wrapper">
-          <img [src]="product.images[0]" alt="product" />
-        </div>
+        <div routerLink="/product-details/{{ product.id }}">
+          <div class="product-card-inner">  
+            <div class="image-wrapper">
+              <img [src]="product.images[0]" alt="product" />
+            </div>
 
-        <div class="product-info">
-          <h3 class="name">{{ product.title }}</h3>
-          <p class="price">₹{{ product.price }}</p>
+            <div class="product-info">
+              <h3 class="name">{{ product.title }}</h3>
+              <p class="price">₹{{ product.price }}</p>
+            </div>
+          </div>
+          <ion-button size="block" class="add-btn">
+            Add to cart
+          </ion-button>
         </div>
-
-        <ion-button size="small" class="add-btn">
-          Add to cart
-        </ion-button>
       </div>
     </div>
 
